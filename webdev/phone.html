@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>WebDev | Home</title>
+
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+
+
+  <!-- Header -->
+  <header class="navbar">
+    <div class="container">
+      <div class="headerItems">
+        <a href="index.html" class="navbar-brand">
+          <img src="images/logo.svg" alt="WebDev logo">
+        </a>
+        <nav class="navbar-nav">
+          <ul>
+            <li>
+              <a href="index.html">Домой</a>
+            </li>
+            <li>
+              <a href="about.html">О нас</a>
+            </li>
+            <li>
+              <a href="contact.html">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+    </div>
+    </div>
+     
+  </header>
+  <div class="container">
+      <div class="blockInfo">
+          <div class="phone">
+            <img src="images/phone/30052942b.jpg" class="img_phone" alt="">
+          </div>
+          <div class="description">
+            <div class="title">Смартфон Apple iPhone 11 128GB Black (MHDH3RU/A) </div>
+            <div class="text">Экран  6.1"/1792x828 Пикс <br>
+      Технология экрана  IPS <br>
+      Тип процессора  A13 Bionic <br>
+      Встроенная память (ROM)  128  ГБ<br>
+      Основная камера МПикс  12/12</div>
+          </div>
+          <div class="price">
+            <div class="number">59 990 coм</div>
+            <div class="button">
+             В корзину
+            </div>
+          </div>
+      </div>
+      <div class="blockInfo">
+          <div class="phone">
+            <img src="images/phone/30052942b.jpg" class="img_phone" alt="">
+          </div>
+          <div class="description">
+            <div class="title">Смартфон Apple iPhone 11 128GB Black (MHDH3RU/A) </div>
+            <div class="text">Экран  6.1"/1792x828 Пикс <br>
+      Технология экрана  IPS <br>
+      Тип процессора  A13 Bionic <br>
+      Встроенная память (ROM)  128  ГБ<br>
+      Основная камера МПикс  12/12</div>
+          </div>
+          <div class="price">
+            <div class="number">59 990 coм</div>
+            <div class="button">
+             В корзину
+            </div>
+          </div>
+      </div>
+      <div class="blockInfo">
+          <div class="phone">
+            <img src="images/phone/30052942b.jpg" class="img_phone" alt="">
+          </div>
+          <div class="description">
+            <div class="title">Смартфон Apple iPhone 11 128GB Black (MHDH3RU/A) </div>
+            <div class="text">Экран  6.1"/1792x828 Пикс <br>
+      Технология экрана  IPS <br>
+      Тип процессора  A13 Bionic <br>
+      Встроенная память (ROM)  128  ГБ<br>
+      Основная камера МПикс  12/12</div>
+          </div>
+          <div class="price">
+            <div class="number">59 990 coм</div>
+            <div class="button">
+             В корзину
+            </div>
+          </div>
+      </div>
+      <div class="blockInfo">
+          <div class="phone">
+            <img src="images/phone/30052942b.jpg" class="img_phone" alt="">
+          </div>
+          <div class="description">
+            <div class="title">Смартфон Apple iPhone 11 128GB Black (MHDH3RU/A) </div>
+            <div class="text">Экран  6.1"/1792x828 Пикс <br>
+      Технология экрана  IPS <br>
+      Тип процессора  A13 Bionic <br>
+      Встроенная память (ROM)  128  ГБ<br>
+      Основная камера МПикс  12/12</div>
+          </div>
+          <div class="price">
+            <div class="number">59 990 coм</div>
+            <div class="button">
+             В корзину
+            </div>
+          </div>
+      </div>
+      <div class="blockInfo">
+          <div class="phone">
+            <img src="images/phone/30052942b.jpg" class="img_phone" alt="">
+          </div>
+          <div class="description">
+            <div class="title">Смартфон Apple iPhone 11 128GB Black (MHDH3RU/A) </div>
+            <div class="text">Экран  6.1"/1792x828 Пикс <br>
+      Технология экрана  IPS <br>
+      Тип процессора  A13 Bionic <br>
+      Встроенная память (ROM)  128  ГБ<br>
+      Основная камера МПикс  12/12</div>
+          </div>
+          <div class="price">
+            <div class="number">59 990 coм</div>
+            <div class="button">
+             В корзину
+            </div>
+          </div>
+      </div>
+  </div>
+  <div class="category">
+    <div class="category_text">Бренд</div>
+    <input type='input' class="category_input">
+    <div class="category_chekbox">
+      <div class="chekboxt_items">
+        <input id="check1" type="checkbox" name="check1" value="check1"  v-model='checkboxMass[0].check'  @click='checkbox(0)'>
+        <label for="check1" class="">Samsung</label>
+      </div>
+      <form action="">
+        <div class="chekboxt_items">
+          <input id="check1" type="checkbox" name="check2" value="check1" v-model='checkboxMass[1].check' @click='checkbox(1)'>
+          <label for="check1" class="">Apple</label>
+        </div>
+        <div class="chekboxt_items"> 
+          <input id="check1" type="checkbox" name="check3" value="check1" v-model='checkboxMass[2].check' @click='checkbox(2)'>
+          <label for="check1" class="">Xiaomi</label>
+        </div>
+        <div class="chekboxt_items">
+          <input id="check1" type="checkbox" name="check4" value="check1" v-model='checkboxMass[3].check' @click='checkbox(3)'>
+          <label for="check1" class="">Honor</label>
+        </div>
+        <div class="chekboxt_items"> 
+          <input id="check1" type="checkbox" name="check5" value="check1" v-model='checkboxMass[4].check' @click='checkbox(4)'>
+          <label for="check1" class="">Huawei</label>
+      </div>
+      </form>
+    </div>
+  </div>
+  <div class="search_price">
+    <div class="price_input_items">
+      <input type='number'class="inputOne input_price" value="1000">
+      <div class="price_line"></div>
+      <input type="number" class="inputTwo input_price" :value="range">
+  </div>  
+  <div class="range_items">
+    <input type="range" class='price_range' v-model='range' min="1000" max="100000" step='100'>
+  </div>
+  </div>
+     
+</div>
+
+<script type="text/javascript" src="assets/vue.js"></script>
+<script type="text/javascript" src="assets/main.js"></script>
+</body>
+</html>
