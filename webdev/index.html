@@ -33,15 +33,15 @@
         <div class="sign_position">
           <div class="sign_items">
             <div class="sign_column">
-               <input type="text" class="sign_input" placeholder="Имя">
-            <input type="text" class="sign_input input_down" placeholder="Фамилия">
+               <input type="text" class="sign_input" placeholder="Имя" v-model='signup.name'>
+            <input type="text" class="sign_input input_down" placeholder="Фамилия" v-model='signup.second_name'>
             </div>
            <div class="sign_column">
-             <input type="text" class="sign_input" placeholder="Почта">
-            <input type="text" class="sign_input input_down" placeholder="Пароль">
+             <input type="text" class="sign_input" placeholder="Почта" v-model='signup.email'>
+            <input type="text" class="sign_input input_down" placeholder="Пароль" v-model='signup.password'>
            </div> 
           </div>
-          <button href="#" class="btn-primary import sign_button" disabled='true' class='btn' >Отправить</button>
+          <button href="#" class="btn-primary import sign_button" disabled='true' class='btn' @click='user_signup'>Отправить</button>
         </div>
         
     </form>
@@ -69,23 +69,24 @@
   <!-- Header -->
   <div :class="{'hidden': windows}" >
       <header class=" header_home">
-      <div class="container">
         <a href="index.html" class="navbar-brand">
-          <img src="images/logo.svg" alt="WebDev logo">
-        </a>
+          <img src="images/кристал.png" alt="WebDev logo" >
+        </a>  
+      <div class="container">
+        
         <nav class="navbar-nav">
           <ul>
             <li>
-              <a href="index.html">На главную</a>
+              <a href="/main">На главную</a>
             </li>
             <li>
-              <a href="about.html">О нас</a>
+              <a href="/about">О нас</a>
             </li>
             <li>
                <a @click='showWind("signin")'>Войти</a>
             </li>
             <li>  
-              <a href="contact.html">Контакты</a>
+              <a href="/contacts">Контакты</a>
             </li>
           </ul>
         </nav>
@@ -128,7 +129,7 @@
                      <li>Модульный ремонт</li>
                      <li>Гарантия работы</li>
                  </ul> 
-                <a @click='description()'>Посмотреть </a>
+                <a @click='description()'>Посмотреть</a>
               </div>
             </div>
             <div class="service-col">
@@ -136,7 +137,7 @@
                 <img src="images/icons/frontend.svg" alt="Frontend">
                 <h4>Каталог</h4>
                 <p>Выбрать и купить смартфон</p>
-                <a href="#" >Learn More</a>
+                <a href="/ChoosePhone" >Посмотреть</a>
               </div>
             </div>
 
@@ -145,7 +146,7 @@
                 <img src="images/icons/backend.svg" alt="Backend">
                 <h4>Ремонт телефонов</h4>
                 <p>Здесь мы показываем как наши инженера ремонтируют телефоны</p>
-                <a href="#">Learn More</a>
+                <a href="#">Посмотреть</a>
               </div>
             </div>
 

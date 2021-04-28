@@ -12,9 +12,51 @@
 </head>
 <body>
   <div id="app">
-
+<div class="signup" v-if="windows === 'signup'">
+      <form action="">
+        <div class="block_exit">
+          <img src="images/icons/4115230-cancel-close-cross-delete_114048.png" alt="" class='exit' @click='removeClass()'>
+        </div>
+        <div class="sign_title">Регистрация</div>
+        <div class="sign_position">
+          <div class="sign_items">
+            <div class="sign_column">
+               <input type="text" class="sign_input" placeholder="Имя">
+            <input type="text" class="sign_input input_down" placeholder="Фамилия">
+            </div>
+           <div class="sign_column">
+             <input type="text" class="sign_input" placeholder="Почта">
+            <input type="text" class="sign_input input_down" placeholder="Пароль">
+           </div> 
+          </div>
+          <button href="#" class="btn-primary import sign_button" disabled='true' class='btn' >Отправить</button>
+        </div>
+        
+    </form>
+  </div>
+  <div class="signup" v-if="windows === 'signin'">
+    <form action="">
+      <div class="block_exit">
+        <img src="images/icons/4115230-cancel-close-cross-delete_114048.png" alt="" class='exit' @click='removeClass()'>
+      </div>
+      <div class="sign_title">Авторизация</div>
+      <div class="sign_position">
+        <div class="sign_items">
+         <div class="signip_column">
+           <input type="text" class="signin_input" placeholder="Почта">
+          <input type="text" class="signin_input sigin_input_down" placeholder="Пароль">
+         </div> 
+        </div>
+        <button href="#" class="btn-primary import sign_button" disabled='true' class='btn' >Отправить</button>
+      </div>
+      <div class="buttonSignup">
+      <a @click='showWind("signup")'>Зарегистироваться</a>
+    </div>
+  </form>
+  </div>
 
   <!-- Header -->
+<div :class="{'hidden': windows}" >
   <header class="navbar">
     <div class="container">
       <div class="headerItems">
@@ -24,13 +66,16 @@
         <nav class="navbar-nav">
           <ul>
             <li>
-              <a href="index.html">Домой</a>
+               <a href="/main">На главную</a>
             </li>
             <li>
-              <a href="about.html">О нас</a>
+              <a href="/about">О нас</a>
             </li>
             <li>
-              <a href="contact.html">Контакты</a>
+               <a @click='showWind("signin")'>Войти</a>
+            </li>
+            <li>
+               <a href="/contacts">Контакты</a>
             </li>
           </ul>
         </nav>
@@ -174,6 +219,7 @@
   </div>
   </div>
      
+  </div>
 </div>
 
 <script type="text/javascript" src="assets/vue.js"></script>

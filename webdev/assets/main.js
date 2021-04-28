@@ -1,4 +1,4 @@
-
+// import {port} from '../../API/server.js'
 
 const show = document.querySelector('.ul');
 const body = document.body;
@@ -44,6 +44,13 @@ const app = new Vue({
 			class: 'bak',
 			inputForm: null,
 			button: null,
+			signup: {
+				name: null,
+				second_name: null,
+				email: null,
+				password: null
+			},
+		
 	},
 	methods: {
 		checkbox(number){
@@ -77,6 +84,9 @@ const app = new Vue({
 		},
 		description(){ // Метод который вызывает функцию для показа спектра улуг
 			showDesctipion();
+		},
+		user_signup(){
+			// fetch(/api/auth/signup)
 		}
 	}
 	
