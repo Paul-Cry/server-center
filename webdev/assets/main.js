@@ -1,4 +1,23 @@
 
+
+const show = document.querySelector('.ul');
+const body = document.body;
+const form= document.querySelector('.aform')
+const exit = document.querySelector('.block_exit')
+
+function showDesctipion(){
+	show.classList.toggle('list')	
+	show.classList.toggle('move')	
+}
+
+function formadd(){
+	body.classList.add('body')
+}
+
+function remove(){
+	body.classList.remove('body')
+}
+
 const app = new Vue({
 	el: '#app',
 	data: {
@@ -21,10 +40,10 @@ const app = new Vue({
 			check:false}
 			],
 			see: null,
-			windows: false,
-			class: null,
+			windows: null,
+			class: 'bak',
 			inputForm: null,
-			button: null
+			button: null,
 	},
 	methods: {
 		checkbox(number){
@@ -38,11 +57,15 @@ const app = new Vue({
 		show(){
 			this.toggle('list')
 		},
-		showWind(){
-		this.windows = true;
+		showWind(name){
+		this.windows = name;
+		this.class = true;
+		formadd();
 		},
-		removeClass(){
-			this.windows = false;
+		removeClass(name){
+			this.windows = name;
+			this.class = false;
+			remove();
 			this.inputForm= '';
 		},
 		proverk(){
@@ -51,29 +74,14 @@ const app = new Vue({
 			}else{
 				this.button= true;
 			}
+		},
+		description(){ // Метод который вызывает функцию для показа спектра улуг
+			showDesctipion();
 		}
 	}
 	
 })
 
-const show = document.querySelector('.ul');
-const button = document.querySelector('.wind')
-const body = document.body;
-const form= document.querySelector('.aform')
-const exit = document.querySelector('.block_exit')
-
-button.onclick = function(){
-	show.classList.toggle('list')	
-	show.classList.toggle('move')	
-}
-
-// form.onclick = function(){
-// 	body.classList.add('body')
-// }
-
-// exit.onclick = function(){
-// 	body.classList.removeClass('body')
-// }
 
 
 

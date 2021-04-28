@@ -12,7 +12,7 @@
 </head>
 <body >
 <div id='app'><!--  class='{"body": windows' -->
-  <div class="form_wind" v-if='windows'>
+  <div class="form_wind" v-if='windows === "form"'>
     <form action="">
       <div class="block_exit">
         <img src="images/icons/4115230-cancel-close-cross-delete_114048.png" alt="" class='exit' @click='removeClass()'>
@@ -22,6 +22,48 @@
         <textarea name="description" id="" style="width: 80%; height: 150px;" class='description' v-model='inputForm' placeholder="Опишите неисправность которую нужно устранить" @input='proverk()'></textarea>
         <button href="#" :class="{'btn-primary': button, 'import': button}" disabled='true' class='btn' >Отправить</button>
       </div>  
+  </form>
+  </div>
+   <div class="signup" v-if="windows === 'signup'">
+      <form action="">
+        <div class="block_exit">
+          <img src="images/icons/4115230-cancel-close-cross-delete_114048.png" alt="" class='exit' @click='removeClass()'>
+        </div>
+        <div class="sign_title">Регистрация</div>
+        <div class="sign_position">
+          <div class="sign_items">
+            <div class="sign_column">
+               <input type="text" class="sign_input" placeholder="Имя">
+            <input type="text" class="sign_input input_down" placeholder="Фамилия">
+            </div>
+           <div class="sign_column">
+             <input type="text" class="sign_input" placeholder="Почта">
+            <input type="text" class="sign_input input_down" placeholder="Пароль">
+           </div> 
+          </div>
+          <button href="#" class="btn-primary import sign_button" disabled='true' class='btn' >Отправить</button>
+        </div>
+        
+    </form>
+  </div>
+  <div class="signup" v-if="windows === 'signin'">
+    <form action="">
+      <div class="block_exit">
+        <img src="images/icons/4115230-cancel-close-cross-delete_114048.png" alt="" class='exit' @click='removeClass()'>
+      </div>
+      <div class="sign_title">Авторизация</div>
+      <div class="sign_position">
+        <div class="sign_items">
+         <div class="signip_column">
+           <input type="text" class="signin_input" placeholder="Почта">
+          <input type="text" class="signin_input sigin_input_down" placeholder="Пароль">
+         </div> 
+        </div>
+        <button href="#" class="btn-primary import sign_button" disabled='true' class='btn' >Отправить</button>
+      </div>
+      <div class="buttonSignup">
+      <a @click='showWind("signup")'>Зарегистироваться</a>
+    </div>
   </form>
   </div>
   <!-- Header -->
@@ -38,6 +80,9 @@
             </li>
             <li>
               <a href="about.html">О нас</a>
+            </li>
+            <li>
+               <a @click='showWind("signin")'>Войти</a>
             </li>
             <li>  
               <a href="contact.html">Контакты</a>
@@ -56,7 +101,7 @@
           </div>
           <p class="lead">Для оформления заявки на ремонт, заполните форму</p>
           <div class="form">
-            <a href="#" class="btn btn-primary aform" @click='showWind()'>Форма</a>
+            <a href="#" class="btn btn-primary aform" @click='showWind("form")'>Форма</a>
           </div>
         </div>
         <div class='hero_img'>
@@ -66,14 +111,14 @@
       </section>
       <!-- Services Section -->
       <section class="section-padding">
-        <div class="contai  ner">
+        <div class="container">
           <div class="services">
             <div class="service-col">
               <div class="service">
                 <img src="images/icons/web-design.svg" alt="Web Design">
                 <h4>Спектр услуг</h4>
                 <p>Просмотреть наши услуги </p>
-                   <ul v-if='' class='ul list move'>
+                   <ul  class='ul list'>
                      <li>Диагностика</li>
                      <li>Предастовление временного телефона</li>
                      <li>Авторизация</li>
@@ -82,10 +127,8 @@
                      <li>Компонентный ремонт</li>
                      <li>Модульный ремонт</li>
                      <li>Гарантия работы</li>
-                 </ul>   
-
-                
-                <a class='wind'>Посмотреть </a>
+                 </ul> 
+                <a @click='description()'>Посмотреть </a>
               </div>
             </div>
             <div class="service-col">
