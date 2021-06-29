@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Сrystal</title>
+
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <!-- Header -->
+  <header class=" header_home headerGrad" id='app'>
+    <div class="exit" @click='shownav()' :style='animation.burger'>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="navMobil navMobilSimpl" :style="animation.name">
+      <img src="./images/icons/close.png" alt="" class='close' :style='animation.exit' @click='hideNav()'>
+      <ul>
+          <a href="/main">На главную</a>
+        </li>
+        <li>
+          <a href="/about">О нас</a>
+        </li>
+        <li>  
+          <a href="/contacts">Контакты</a>
+        </li>
+      </ul>
+    </div>
+    <a href="/main" class="navbar-brand  showBlock ">
+      <img src="images/кристал.png"  >
+    </a>  
+  <div class="container">
+    <nav class="navbar-nav">
+        <li>
+        <a href="/main">На главную</a>
+        </li>
+        <li>
+        <a href="/about">О нас</a>
+        </li>
+        <li>  
+        <a href="/contacts">Контакты</a>
+        </li>
+      </ul>
+      </nav>
+  </div>
+</header>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero hero-sm contact" style=" background-size: cover;">
+      <div class="container">
+        <h1 class="mb-0" style='color: #fff;'>Наши контакты</h1>
+      </div>
+    </section>
+
+    <!-- Form and text -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="contact-form">
+          <div class="contact-form__form">
+            <form action="#" class="form-layout">
+              <div class="form-col-50">
+                <label for="contact-name">Ваше имя </label>
+                <input type="text" class="form-control" name="contact-name" id="contact-name">
+              </div>
+              <div class="form-col-50">
+                <label for="contact-email">Ваш email</label>
+                <input type="email" class="form-control" name="contact-email" id="contact-email">
+              </div>
+              <div class="form-col">
+                <label for="contact-message">Сообщение</label>
+                <textarea class="form-control"
+                          name="contact-message"
+                          id="contact-message"
+                          rows="4"></textarea>
+              </div>
+              <div class="form-col">
+                <button class="btn btn-primary" type="submit">
+                  Отрпавить
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="contact-form__info">
+            <p class="lead">Email: <a href="mailto:webdev@gmail.com">Сrystal@gmail.com</a></p>
+            <p class="lead">Phone: <a href="tel:+9222323322">+ 999 23 23 322</a></p>
+            <br>
+            <p class="lead">Текст </p>
+            <p class="lead">Дата</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="simple">
+    <div class="container">
+      <div class="footer-row">
+        <small class="footer-copyright">© 2021 Сrystal — All Rights Reserved</small>
+        <ul class="footer-social">
+          <li>
+            <a href="#">
+              <img src="images/icons/facebook.svg" alt="WebDev on Facebook">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/icons/instagram.svg" alt="WebDev on Instagram">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/icons/youtube.svg" alt="WebDev on Youtube">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/icons/twitter.svg" alt="WebDev on Twitter">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src='./assets/vue.js'> </script>
+  <script src='./assets/main.js'> </script>
+
+</body>
+</html>

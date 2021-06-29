@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Сrystal</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="app"> 
+
+ <div :class="{'hidden': windows}" >
+  <!-- Header -->
+  <header class=" header_home headerGrad">
+    <div class="exit" @click='shownav()' :style='animation.burger'>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="navMobil navMobilSimpl" :style="animation.name">
+      <img src="./images/icons/close.png" alt="" class='close' :style='animation.exit' @click='hideNav()'>
+      <ul>
+        <li>
+          <a href="/main">На главную</a>
+        </li>
+        <li>
+          <a href="/about">О нас</a>
+        </li>
+         <li v-if='user'>
+           <a @click='exit()' href="/main">Выйти</a>
+        </li>
+        <li>  
+          <a href="/contacts">Контакты</a>
+        </li>
+      </ul>
+    </div>
+    <a href="/main" class="navbar-brand  showBlock ">
+      <img src="images/кристал.png"  >
+    </a>  
+  <div class="container">
+    <nav class="navbar-nav">
+      <ul>
+        <li>
+        <a href="/main">На главную</a>
+        </li>
+        <li>
+        <a href="/about">О нас</a>
+        </li>
+         <li v-if='user'>
+         <a @click='exit()' href="/main">Выйти</a>
+        </li>
+        <li>  
+        <a href="/contacts">Контакты</a>
+        </li>
+      </ul>
+      </nav>
+  </div>
+</header>
+  <div :class="{'hidden': windows, 'blockBody': animation.statusBody}" >
+    <div class="container">
+      <div class="adminTitle">
+     Добро пожаловать {{user.name}}
+     </div>
+     <div class="block_form">
+         <div class="block_form_text">
+           Заявок {{Applications.length}}
+         </div>
+         <div class="adimin_form_items">
+           <div class="form_type">
+             <div class="type_number">№</div>
+             <div class="type_items">Имя</div>
+             <div class="type_items">Email</div>
+             <div class="type_items">Дата</div>
+             <div class="type_items type_action">
+               Действия
+             </div>
+           </div>
+           <div class="applications" v-for='(element, index) in Applications'>
+             <div class="type_number" style="color: #000">{{++index}}</div>
+             <div class="applications_items">{{element.name}}</div>
+             <div class="applications_items">{{element.email}}</div>
+             <div class="applications_items">{{element.Date}}</div>
+             <div class="applications_items app_button_pos">
+               <div class="applications_button button-b btn-primary ap_button" @click='read_description(element)'>Читать</div>
+               <div class="applications_button button-r btn-primary del" @click="get_delete_element(element, --index)">Удалить</div>
+             </div>  
+         </div>
+     </div>
+   </div>
+  
+ 
+   <!-- Footer -->
+   <footer>
+     <div class="container">
+       <div class="footer-row">
+         <small class="footer-copyright">© 2021 Сrystal — All Rights Reserved</small>
+         <ul class="footer-social">
+           <li>
+             <a href="#">
+               <img src="images/icons/facebook.svg" alt="WebDev on Facebook">
+             </a>
+           </li>
+           <li>
+             <a href="#">
+               <img src="images/icons/instagram.svg" alt="WebDev on Instagram">
+             </a>
+           </li>
+           <li>
+             <a href="#">
+               <img src="images/icons/youtube.svg" alt="WebDev on Youtube">
+             </a>
+           </li>
+           <li>
+             <a href="#">
+               <img src="images/icons/twitter.svg" alt="WebDev on Twitter">
+             </a>
+           </li>
+         </ul>
+       </div>
+     </div>
+   </footer>
+   </div>
+  </div>
+
+ 
+  </div>
+</div>
+<script type="text/javascript" src="assets/vue.js"></script>
+<script type="text/javascript" src="assets/main.js"></script>
+</body>
+</html>

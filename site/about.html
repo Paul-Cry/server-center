@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Сrystal</title>
+
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>  
+  <div id="app">
+    <header class=" header_home headerGrad">
+      <div class="exit" @click='shownav()' :style='animation.burger'>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="navMobil navMobilSimpl" :style="animation.name">
+        <img src="./images/icons/close.png" alt="" class='close' :style='animation.exit' @click='hideNav()'>
+        <ul>
+          <li>
+            <a href="/main">На главную</a>
+          </li>
+          <li>
+            <a href="/about">О нас</a>
+          </li>
+          <li>  
+            <a href="/contacts">Контакты</a>
+          </li>
+        </ul>
+      </div>
+      <a href="/main" class="navbar-brand  showBlock ">
+        <img src="images/кристал.png"  >
+      </a>  
+    <div class="container">
+      <nav class="navbar-nav">
+        <ul>
+          <li>
+          <a href="/main">На главную</a>
+          </li>
+          <li>
+          <a href="/about">О нас</a>
+          </li>
+          <li>  
+          <a href="/contacts">Контакты</a>
+          </li>
+        </ul>
+        </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="about_hero " >
+      <div class="container">
+        <h1 class="mb-0">Компания Кристалл</h1> 
+      </div>
+    </section>
+
+
+    
+    <div class="main">
+      <div class="container">
+        <div class="main_items">
+          
+          <div class="text_main">Наши специалисты обладают глубокими знаниями микроэлектроники и успешным опытом в сфере ремонта компьютерной техники. Квалифицированные мастера приложат все усилия для спасения Вашего гаджета и улучшения настроения. Мы более 5 лет работаем
+                в сфере обслуживания и ремонта мобильной техники, кому как ни нам известны все тонкости и нюансы проведения сложных ремонтов.
+          </div>
+      </div>
+      </div>
+    </div>
+    <section class="section-padding">
+      <div class="container">
+        <div class="split-section">
+          <div class="split-section__text">
+            <div class="advantages_title">
+              Наши преймущества
+            </div> 
+            <ul class="advantages">
+              <li class="advantages_text">Удобный сервис</li>
+              <li class="advantages_text">Качественные запчасти</li>
+              <li class="advantages_text">Опытные мастера</li>
+              <li class="advantages_text">Экспресс-ремонт</li>
+              <li class="advantages_text">Отремонтируем любой гаджет</li>
+              <li class="advantages_text">Cоотношение цена/качество</li>
+            </ul>
+          </div>
+          <div class="split-section__image">
+            <img src="images/worker/remont-telefonov_5e2eec1174f8d.jpg" alt="Laptop" class="img-shadow img-rounded">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+</div>
+  <footer class="simple">
+    <div class="container">
+      <div class="footer-row">
+        <small class="footer-copyright">© 2021 Сrystal — All Rights Reserved</small>
+        <ul class="footer-social">
+          <li>
+            <a href="#">
+              <img src="images/icons/facebook.svg" alt="WebDev on Facebook">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/icons/instagram.svg" alt="WebDev on Instagram">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/icons/youtube.svg" alt="WebDev on Youtube">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/icons/twitter.svg" alt="WebDev on Twitter">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  
+  <script src='./assets/vue.js'> </script>
+  <script src='./assets/main.js'> </script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Сrystal</title>
+
+  <link rel="stylesheet" href="css/main.css">
+ <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body >
+<div id='app'><!--  class='{"body": windows' -->
+  
+  <div class="form_wind topIndex" v-if='windows === "form"'> 
+    <form action="">
+      <div class="block_exit">
+        <img src="images/icons/4115230-cancel-close-cross-delete_114048.png" alt="" class='exit' @click='removeClass()'>
+      </div>
+      <div class="form_title">Заявка на ремонт</div>
+      <div class="form_items">
+        <textarea name="description" id="" style="width: 80%; height: 150px;" class='description' v-model='inputForm' placeholder="Опишите неисправность которую нужно устранить" @input='proverk()'></textarea>
+         <div class="error" v-if="!user">
+          Для заполнения заявки нужно Авторизоваться
+        </div>
+        <button  :class="{'btn-primary': button }" :disabled='block_button'  :disabled='!user'class='btn' @click.prevent="user_form()" >Отправить</button>
+      </div>  
+  </form>
+  </div>
+   <div class="signup topIndex" v-if="windows === 'signup'">
+    
+    <!-- Форма регистрации  -->
+      <form >
+        <div class="block_exit">  
+          <img src="images/icons/4115230-cancel-close-cross-delete_114048.png" alt="" class='exit' @click='removeClass()' >
+        </div>
+        <div class="sign_title">Регистрация</div>
+        <div class="sign_position">
+          <div class="sign_items">
+            <div class="sign_column">
+              <input type="text" class="sign_input" placeholder="Имя" v-model='signup.name' @input="check_signin()">
+              <input type="text" class="sign_input input_down" placeholder="Фамилия" v-model='signup.second_name' @input="check_signin()">
+            </div>
+
+           <div class="sign_column">
+              <input type="text" class="sign_input" placeholder="Почта" v-model='signup.email' @input="check_signin()">
+              <input type="text" class="sign_input input_down" placeholder="Пароль" v-model='signup.password' @input="check_signin()">
+           </div> 
+          </div>
+          <button class="sign_button import " :class="{'btn-primary': button}" :disabled='block_button && !user' class='btn' @click.prevent='user_signup()' ><div>
+            <div :class='{"hideButton": loadingBut}'>Отправить</div> 
+            <img src="/site/images/icons/loadingcircles_102612.png" :class='{"hideButton": !loadingBut}' alt="">
+          </div> </button>
+        </div>   
+    </form>
+  </div>
+  <div class="signup" v-if="windows === 'signin'">
+  <!-- Форма аторизации  -->
+    <form action="">
+      <div class="block_exit">
+        <img src="images/icons/4115230-cancel-close-cross-delete_114048.png" alt="" class='exit' @click='removeClass()'>
+      </div>
+      <div class="sign_title">Авторизация</div>
+      <div class="sign_position">
+        <div class="sign_items">
+         <div class="signip_column">
+           <input type="text" class="signin_input" placeholder="Почта" v-model="signin.email" @input='check_signup()'>
+          <input type="text" class="signin_input sigin_input_down" placeholder="Пароль" v-model="signin.password" @input='check_signup()'>
+         </div> 
+        </div>
+        <button class="sign_button import " :class="{'btn-primary': button}" class='btn'  @click.prevent="user_signin()" :disabled='block_button' >
+          <div :class='{"hideButton": loadingBut}'>Отправить</div> 
+          <img src="/site/images/icons/loadingcircles_102612.png" :class='{"hideButton": !loadingBut}' alt="">
+        </button>
+      </div>
+      <div class="buttonSignup">
+      <a @click='showWind("signup")'>Зарегистироваться</a>
+    </div>
+  </form>
+  </div>
+  <!-- Header -->
+  <div :class="{'hidden': windows, 'blockBody': animation.statusBody}" >
+      <header class=" header_home">
+        <div class="exit" @click='shownav()' :style='animation.burger'>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="navMobil" :style="animation.name">
+          <img src="./images/icons/close.png" alt="" class='close' :style='animation.exit' @click='hideNav()'>
+          <ul>
+            <li>
+              <a href="/admin" @click="getAllForms()">Админ</a>
+            </li>
+            <li>
+              <a href="/main">На главную</a>
+            </li>
+            <li>
+              <a href="/about">О нас</a>
+            </li>
+            <li v-if='!user'>
+               <a @click='showWind("signin")'>Войти</a>
+            </li>
+             <li v-if='user'>
+               <a @click='exit()'>Выйти</a>
+            </li>
+            <li>  
+              <a href="/contacts">Контакты</a>
+            </li>
+          </ul>
+        </div>
+        <a href="/main" class="navbar-brand">
+          <img src="images/кристал.png"  >
+        </a>  
+      <div class="container">
+        <nav class="navbar-nav">
+          <ul>
+            <li>
+            <a href="/admin" @click="getAllForms()">Админ</a>
+            </li>
+            <li>
+            <a href="/main">На главную</a>
+            </li>
+            <li>
+            <a href="/about">О нас</a>
+            </li>
+            <li v-if='!user'>
+             <a @click='showWind("signin")'>Войти</a>
+            </li>
+             <li v-if='user'>
+             <a @click='exit()'>Выйти</a>
+            </li>
+            <li>  
+            <a href="/contacts">Контакты</a>
+            </li>
+          </ul>
+          </nav>
+      </div>
+    </header>
+    <main>
+     
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero_block">
+          <div class="hederText">
+            <h1>Сервисный центр <br></h1><h2>по ремонту телефонов</h2>
+          </div>
+          <p class="lead">Для оформления заявки на ремонт, заполните форму</p>
+          <div class="form">
+            <a href="#" class="btn btn-primary aform" @click='showWind("form")'>Форма</a>
+          </div>
+        </div>
+        <div class='hero_img'>
+          <img src="images/home/bg-header-img.png" alt="" class="hero_imtItems1" >
+          <img src="images/home/8abedb5705a6dae23b.png" alt="" class="hero_imtItems2">
+        </div>
+      </section>
+      <!-- Services Section -->
+      <div class="container">
+          <div class="Text_User" v-if='user'>
+              Добро пожаловать {{user.name}}
+          </div>
+      </div>
+      <section class="section-padding">
+        <div class="container">
+          <div class="services">
+            <div class="service-col">
+              <div class="service">
+                <img src="images/icons/web-design.svg" alt="">
+                <h4>Спектр услуг</h4>
+                <p>Просмотреть наши услуги </p>
+                   <ul  class='ul ' v-if='check_list === "ul"' >
+                     <li>Диагностика</li>
+                     <li>Предастовление временного телефона</li>
+                     <li>Авторизация</li>
+                     <li>Перепрошивка</li>
+                     <li>Программный ремонт</li>
+                     <li>Компонентный ремонт</li>
+                     <li>Модульный ремонт</li>
+                     <li>Гарантия работы</li>
+                 </ul> 
+                <a @click='description()'>Посмотреть</a>
+              </div>
+            </div>
+            <div class="service-col">
+              <div class="service">
+                <img src="images/icons/frontend.svg" alt="Frontend">
+                <h4>Каталог</h4>
+                <p>Выбрать и купить смартфон
+                </p>
+                <a href="/ChoosePhone" >Посмотреть</a>
+              </div>
+            </div>
+             <div class="service-col">
+              <div class="service">
+                <img src="images/icons/free-icon-work-team-817918.png" alt="Frontend">
+                <h4>О нас </h4>
+                <p>Рассказываем о нас
+                </p>
+                <a href="/about" >Посмотреть</a>
+              </div>
+            </div>
+
+      </section>
+
+      <!-- Split Section -->
+      <div class="container">
+        <section class="map_group">
+            <div class="size_map">
+             <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae8b2d759b5c315cfdeedd245d397bd458a85f2f7f9bacf34fcfc93b68a5a2f42&amp;source=constructor"  frameborder="0" class="map_inv"></iframe>
+            </div>
+            <div class="split-section__text">
+              <h2></h2>
+              <p class="lead">Бишкек, улица Тоголок Молдо д.86</p>
+            </div>
+        </section>
+      </div>
+    
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-row">
+          <small class="footer-copyright">© 2021 Сrystal — All Rights Reserved</small>
+          <ul class="footer-social">
+            <li>
+              <a href="#">
+                <img src="images/icons/facebook.svg" alt="Facebook">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="images/icons/instagram.svg" alt="Instagram">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="images/icons/youtube.svg" alt="Youtube">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="images/icons/twitter.svg" alt="Twitter">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+  
+  </div>
+<script type="text/javascript" src="assets/vue.js"></script>
+<script type="text/javascript" src="assets/main.js"></script>
+</body>
+</html>

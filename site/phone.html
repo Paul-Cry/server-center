@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Сrystal</title>
+
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+<div class="signup" v-if="windows === 'signup'">
+      <form action="">
+        <div class="block_exit">
+          <img src="images/icons/4115230-cancel-close-cross-delete_114048.png" alt="" class='exit' @click='removeClass()'>
+        </div>
+        <div class="sign_title">Регистрация</div>
+        <div class="sign_position">
+          <div class="sign_items">
+            <div class="sign_column">
+               <input type="text" class="sign_input" placeholder="Имя">
+            <input type="text" class="sign_input input_down" placeholder="Фамилия">
+            </div>
+           <div class="sign_column">
+             <input type="text" class="sign_input" placeholder="Почта">
+            <input type="text" class="sign_input input_down" placeholder="Пароль">
+           </div> 
+          </div>
+          <button href="#" class="btn-primary import sign_button" disabled='true' class='btn' >Отправить</button>
+        </div>
+        
+    </form>
+  </div>
+  <div class="signup" v-if="windows === 'signin'">
+    <form action="">
+      <div class="block_exit">
+        <img src="images/icons/4115230-cancel-close-cross-delete_114048.png" alt="" class='exit' @click='removeClass()'>
+      </div>
+      <div class="sign_title">Авторизация</div>
+      <div class="sign_position">
+        <div class="sign_items">
+         <div class="signip_column">
+           <input type="text" class="signin_input" placeholder="Почта">
+          <input type="text" class="signin_input sigin_input_down" placeholder="Пароль">
+         </div> 
+        </div>
+        <button href="#" class="btn-primary import sign_button" disabled='true' class='btn' >Отправить</button>
+      </div>
+      <div class="buttonSignup">
+      <a @click='showWind("signup")'>Зарегистироваться</a>
+    </div>
+  </form>
+  </div>
+
+  <!-- Header -->
+<div :class="{'hidden': windows}" >
+  <header class=" header_home headerGrad" id='app'>
+    <div class="exit" @click='shownav()' :style='animation.burger'>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="navMobil navMobilSimpl" :style="animation.name">
+      <img src="./images/icons/close.png" alt="" class='close' :style='animation.exit' @click='hideNav()'>
+      <ul>
+        <li>
+          <a href="/main">На главную</a>
+        </li>
+        <li>
+          <a href="/about">О нас</a>
+        </li>
+        <li>  
+          <a href="/contacts">Контакты</a>
+        </li>
+      </ul>
+    </div>
+    <a href="/main" class="navbar-brand  showBlock ">
+      <img src="images/кристал.png"  >
+    </a>  
+  <div class="container">
+    <nav class="navbar-nav">
+      <ul>
+        <li>
+        <a href="/main">На главную</a>
+        </li>
+        <li>
+        <a href="/about">О нас</a>
+        </li>
+        <li>  
+        <a href="/contacts">Контакты</a>
+        </li>
+      </ul>
+      </nav>
+  </div>
+</header>
+<div class='filter'>
+  <img src="/site/images/icons/filter.png" alt="">
+  <div>Все фильтры</div>
+</div>
+  <div class="container">
+      <div class="blockInfo">
+          <div class="phone">
+            <img src="images/phone/30052942b.jpg" class="img_phone" alt="">
+          </div>
+          <div class="description">
+            <div class="title">Смартфон Apple iPhone 11 128GB Black (MHDH3RU/A) </div>
+            <div class="text">Экран  6.1"/1792x828 Пикс <br>
+      Технология экрана  IPS <br>
+      Тип процессора  A13 Bionic <br>
+      Встроенная память (ROM)  128  ГБ<br>
+      Основная камера МПикс  12/12</div>
+          </div>
+          <div class="price">
+            <div class="number">59 990 coм</div>
+            <div class="button">
+               <div class="text">В корзину</div> 
+               <img src="/site/images/icons/free-icon-add-to-cart-1393.png" alt="">
+            </div>
+          </div>
+      </div>
+      <div class="blockInfo">
+        <div class="phone">
+          <img src="images/phone/30052942b.jpg" class="img_phone" alt="">
+        </div>
+        <div class="description">
+          <div class="title">Смартфон Apple iPhone 11 128GB Black (MHDH3RU/A) </div>
+          <div class="text">Экран  6.1"/1792x828 Пикс <br>
+    Технология экрана  IPS <br>
+    Тип процессора  A13 Bionic <br>
+    Встроенная память (ROM)  128  ГБ<br>
+    Основная камера МПикс  12/12</div>
+        </div>
+        <div class="price">
+          <div class="number">59 990 coм</div>
+          <div class="button">
+             <div class="text">В корзину</div> 
+             <img src="/site/images/icons/free-icon-add-to-cart-1393.png" alt="">
+          </div>
+        </div>
+    </div>
+    <div class="blockInfo">
+      <div class="phone">
+        <img src="images/phone/30052942b.jpg" class="img_phone" alt="">
+      </div>
+      <div class="description">
+        <div class="title">Смартфон Apple iPhone 11 128GB Black (MHDH3RU/A) </div>
+        <div class="text">Экран  6.1"/1792x828 Пикс <br>
+  Технология экрана  IPS <br>
+  Тип процессора  A13 Bionic <br>
+  Встроенная память (ROM)  128  ГБ<br>
+  Основная камера МПикс  12/12</div>
+      </div>
+      <div class="price">
+        <div class="number">59 990 coм</div>
+        <div class="button">
+           <div class="text">В корзину</div> 
+           <img src="/site/images/icons/free-icon-add-to-cart-1393.png" alt="">
+        </div>
+      </div>
+  </div>
+  <div class="blockInfo">
+    <div class="phone">
+      <img src="images/phone/30052942b.jpg" class="img_phone" alt="">
+    </div>
+    <div class="description">
+      <div class="title">Смартфон Apple iPhone 11 128GB Black (MHDH3RU/A) </div>
+      <div class="text">Экран  6.1"/1792x828 Пикс <br>
+Технология экрана  IPS <br>
+Тип процессора  A13 Bionic <br>
+Встроенная память (ROM)  128  ГБ<br>
+Основная камера МПикс  12/12</div>
+    </div>
+    <div class="price">
+      <div class="number">59 990 coм</div>
+      <div class="button">
+         <div class="text">В корзину</div> 
+         <img src="/site/images/icons/free-icon-add-to-cart-1393.png" alt="">
+      </div>
+    </div>
+</div>
+     
+  </div>
+  <div class="category">
+    <div class="category_text">Бренд</div>
+    <input type='input' class="category_input">
+    <div class="category_chekbox">
+      <form method="post">
+          <div class="chekboxt_items">
+            <input id="check1" type="checkbox" name="check1" value="check1"  v-model='checkboxMass[0].check'  @click='checkbox(0)'>
+            <label for="check1" class="">Samsung</label>
+          </div>
+          <div class="chekboxt_items">
+            <input id="check1" type="checkbox" name="check" value="check2" v-model='checkboxMass[1].check' @click='checkbox(1)'>
+            <label for="check1" class="">Apple</label>
+          </div>
+          <div class="chekboxt_items"> 
+            <input id="check1" type="checkbox" name="check" value="check3" v-model='checkboxMass[2].check' @click='checkbox(2)'>
+            <label for="check1" class="">Xiaomi</label>
+          </div>
+          <div class="chekboxt_items">
+            <input id="check1" type="checkbox" name="check4" value="check4" v-model='checkboxMass[3].check' @click='checkbox(3)'>
+            <label for="check1" class="">Honor</label>
+          </div>
+          <div class="chekboxt_items"> 
+            <input id="check1" type="checkbox" name="check5" value="check5" v-model='checkboxMass[4].check' @click='checkbox(4)'>
+            <label for="check1" class="">Huawei</label>
+            
+          </div>
+      </form>
+    </div>
+  </div>
+  <div class="search_price">
+    <div class="price_input_items">
+      <input type='number'class="inputOne input_price" value="1000">
+      <div class="price_line"></div>
+      <input type="number" class="inputTwo input_price" :value="range">
+  </div>  
+  <div class="range_items">
+    <input type="range" class='price_range' v-model='range' min="1000" max="100000" step='100'>
+  </div>
+  </div>
+     
+  </div>
+</div>
+  <footer class="simple">
+      <div class="container">
+        <div class="footer-row">
+          <small class="footer-copyright">© 2021 Сrystal — All Rights Reserved</small>
+          <ul class="footer-social">
+            <li>
+              <a href="#">
+                <img src="images/icons/facebook.svg" alt="WebDev on Facebook">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="images/icons/instagram.svg" alt="WebDev on Instagram">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="images/icons/youtube.svg" alt="WebDev on Youtube">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="images/icons/twitter.svg" alt="WebDev on Twitter">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </footer>
+
+
+<script type="text/javascript" src="assets/vue.js"></script>
+<script type="text/javascript" src="assets/main.js"></script>
+</body>
+</html>
